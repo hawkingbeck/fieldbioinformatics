@@ -28,3 +28,8 @@ subprocess.run(command)
 consenusSeqFiles = os.listdir(consensusSeqDir)
 for consenusSeqFile in consenusSeqFiles:
   print(f"{consenusSeqFile}")
+  if os.path.isfile(consenusSeqFile) == True:
+    if os.path.splitext(consenusSeqFile)[0] == ".fasta":
+      command = ["pangolin", "--verbose", "--usher", consenusSeqFile, "--outfile", f"/data/pangolin-output/{consenusSeqFile}.csv"]
+      print(f"Running Command: {command}")
+      subprocess.run(command)
