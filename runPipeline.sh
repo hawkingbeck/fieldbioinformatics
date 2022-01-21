@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-inputData="../test_data/PGIM21-R085"
+inputData="./PGIM21-R085"
 primerSchemes="../test_data/primer-schemes"
 primerScheme="IturiEBOV/V1"
 prefix="test-data"
@@ -52,6 +52,8 @@ function cmdTester {
     echo
     return
 }
+
+cd test-data
 
 cmdTester $gatherCmd_n
 
