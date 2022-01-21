@@ -25,6 +25,16 @@ demuxCmd_n="artic demultiplex \
             --threads ${threads} \
             ${prefix}_fastq_pass.fastq"
 
+minionCmd_m="artic minion \
+            --normalise 200 \
+            --threads ${threads} \
+            --scheme-directory ${primerSchemes} \
+            --read-file ${prefix}_guppyplex_fastq_pass-NB${barcode}.fastq \
+            --medaka \
+            --medaka-model r941_min_high_g351 \
+            ${primerScheme} \
+            ${prefix}"
+
 function cmdTester {
     echo "###########################################################################################"
     echo -e "${BLUE}Running:${NC} $*"
@@ -45,4 +55,6 @@ function cmdTester {
 
 cmdTester $gatherCmd_n
 
-cmdTester $demuxCmd_m
+cmdTester $demuxCmd_n
+
+# cmdTester $minionCmd_m
