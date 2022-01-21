@@ -8,7 +8,7 @@ import numpy as np
 from datetime import datetime
 from decimal import Decimal
 
-inputDir = str(os.getenv('INPUT_DIR'))
+inputDir = os.getenv('INPUT_DIR')
 outputDir = os.getenv('OUTPUT_DIR')
 
 print(f"Input Dir: {inputDir}")
