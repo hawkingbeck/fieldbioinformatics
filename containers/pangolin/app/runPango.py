@@ -8,11 +8,8 @@ import numpy as np
 from datetime import datetime
 from decimal import Decimal
 
-inputDir = os.getenv('INPUT_DIR')
-outputDir = os.getenv('OUTPUT_DIR')
-
-print(f"Input Dir: {inputDir}")
-print(f"Output Dir {outputDir}")
+consensusSeqDir = "/data/consensus-sequences"
+pangolinOutputDir = "/data/pangolin-output"
 
 print(f"Pangolin D Version")
 command = ["pangolin", "-dv"]
@@ -28,6 +25,6 @@ subprocess.run(command)
 
 
 # List all the consensus fasta files in the input dir
-inputFiles = os.listdir(inputDir)
-for inputFile in inputFiles:
-  print(f"{inputFile}")
+consenusSeqFiles = os.listdir(consensusSeqDir)
+for consenusSeqFile in consenusSeqFiles:
+  print(f"{consenusSeqFile}")
