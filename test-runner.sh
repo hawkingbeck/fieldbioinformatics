@@ -165,5 +165,5 @@ else
 fi
 
 # cleanup
-cd .. && rm -r tmp
+# cd .. && rm -r tmp
 echo -e "${BLUE}Done.${NC}"
