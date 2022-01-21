@@ -7,8 +7,6 @@ primerScheme="IturiEBOV/V1"
 prefix="test-data"
 barcode="03"
 threads=2
-downloadCmd="wget http://artic.s3.climb.ac.uk/run-folders/EBOV_Amplicons_flongle.tar.gz"
-extractCmd="tar -vxzf EBOV_Amplicons_flongle.tar.gz"
 
 # colours
 NC='\033[0m'
@@ -23,6 +21,9 @@ gatherCmd_n="artic gather \
         --directory ${inputData} \
         --fast5-directory ${inputData}/fast5_pass"
 
+demuxCmd_n="artic demultiplex \
+            --threads ${threads} \
+            ${prefix}_fastq_pass.fastq"
 
 function cmdTester {
     echo "###########################################################################################"
@@ -43,3 +44,5 @@ function cmdTester {
 }
 
 cmdTester $gatherCmd_n
+
+cmdTester $demuxCmd_m
