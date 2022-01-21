@@ -8,7 +8,7 @@ import numpy as np
 from datetime import datetime
 from decimal import Decimal
 
-inputDir = os.getenv('INPUT_DIR')
+inputDir = str(os.getenv('INPUT_DIR'))
 outputDir = os.getenv('OUTPUT_DIR')
 
 print(f"Input Dir: {inputDir}")
@@ -26,3 +26,8 @@ print(f"PangoLearn Version")
 command = ["pangolin", "-pv"]
 subprocess.run(command)
 
+
+# List all the consensus fasta files in the input dir
+inputFiles = os.listdir(inputDir)
+for inputFile in inputFiles:
+  print(f"{inputFile}")
